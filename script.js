@@ -89,38 +89,28 @@ if (formularioContacto) {
             return;
         }
 
-        // Si todo es válido, mostrar éxito
-        mostrarNotificacion('¡Mensaje enviado correctamente! Te contactaremos pronto.', 'success');
+        // Enviar a Formspree
+        const formData = new FormData(formularioContacto);
 
-        // Limpiar formulario
-        formularioContacto.reset();
-
-        // Aquí puedes agregar código para enviar el formulario a un servidor
-        // Ejemplo con fetch:
-        /*
-        fetch('tu-endpoint.php', {
+        fetch('https://formspree.io/f/mykbeaza', {
             method: 'POST',
+            body: formData,
             headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                nombre: nombre,
-                email: email,
-                telefono: telefono,
-                asunto: asunto,
-                mensaje: mensaje
-            })
+                'Accept': 'application/json'
+            }
         })
-        .then(response => response.json())
-        .then(data => {
-            mostrarNotificacion('¡Mensaje enviado correctamente!', 'success');
-            formularioContacto.reset();
+        .then(response => {
+            if (response.ok) {
+                mostrarNotificacion('¡Mensaje enviado correctamente! Te contactaremos pronto.', 'success');
+                formularioContacto.reset();
+            } else {
+                mostrarNotificacion('Error al enviar el mensaje. Por favor intenta de nuevo.', 'error');
+            }
         })
         .catch(error => {
             mostrarNotificacion('Error al enviar el mensaje', 'error');
             console.error('Error:', error);
-        });
-        */
+        })
     });
 }
 
