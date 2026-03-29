@@ -1,268 +1,324 @@
-# 🎯 PLANTILLA WEB EDITABLE PARA NEGOCIOS LOCALES
+# 🚀 PLANTILLA WEB PROFESIONAL PARA PEQUEÑOS NEGOCIOS
 
-Esta es una plantilla profesional, moderna y completamente editable para pequeños negocios y empresas locales.
+Una plantilla web **100% editable, responsive y funcional** diseñada para vender a pequeños negocios y empresas locales.
 
----
+## 📁 Estructura de Carpetas
 
-## 📋 GUÍA RÁPIDA DE EDICIÓN
-
-### 1️⃣ CAMBIAR INFORMACIÓN BÁSICA (en `index.html`)
-
-Busca las líneas con el comentario `<!-- EDITAR:` y cambia:
-
-#### Título y Branding
-```html
-<!-- Línea 9 -->
-<title>Mi Negocio - Servicios Profesionales</title>
-
-<!-- Línea 18 -->
-<h1>Mi Negocio</h1>
+```
+plantilla-web/
+├── index.html              # Página principal
+├── sobre-nosotros.html     # Información de la empresa
+├── servicios.html          # Detalle de servicios
+├── galeria.html            # Portafolio/galería de proyectos
+├── contacto.html           # Formulario de contacto
+├── style.css               # Estilos CSS
+├── script.js               # JavaScript funcional
+└── README.md               # Este archivo
 ```
 
-#### Descripción del Negocio
+## 🎯 Características Incluidas
+
+✅ **Multi-página funcional** - 5 páginas HTML conectadas
+✅ **Responsive design** - Funciona en móvil, tablet y desktop
+✅ **Menú hamburguesa** - Navegación automática en dispositivos pequeños
+✅ **Formulario funcional** - Con validación de datos
+✅ **Animaciones suaves** - Al hacer scroll
+✅ **Sistema de notificaciones** - Feedback visual al usuario
+✅ **Totalmente editable** - Comentarios claros en el código
+✅ **Colores personalizables** - Variables CSS para cambiar tema
+✅ **SEO básico** - Meta tags listos
+✅ **Velocidad optimizada** - Código limpio y eficiente
+
+## 📝 GUÍA RÁPIDA DE EDICIÓN
+
+### 1️⃣ Cambiar Nombre y Logo
+
+En **todos los archivos HTML**, busca y reemplaza:
+
 ```html
-<!-- Línea 50 -->
-<h1>Bienvenido a Mi Negocio</h1>
-<p>Servicios de calidad para tu comunidad local</p>
+<!-- ANTES -->
+<h1><a href="index.html">Mi Negocio</a></h1>
+
+<!-- DESPUÉS -->
+<h1><a href="index.html">Tu Nombre de Negocio</a></h1>
 ```
 
-#### Estadísticas
-```html
-<!-- Reemplaza los números con los tuyos -->
-<div class="stat-number">1000+</div>
-<div class="stat-label">Clientes Satisfechos</div>
-```
-
----
-
-### 2️⃣ PERSONALIZAR SERVICIOS
-
-En la sección `<!-- SECCIÓN SERVICIOS -->`, edita:
+También en el footer:
 
 ```html
-<div class="servicio-card">
-    <div class="servicio-icon">🔧</div> <!-- Cambia el emoji -->
-    <h3>Servicio 1</h3> <!-- Nombre de tu servicio -->
-    <p>Descripción breve...</p> <!-- Descripción -->
-    <a href="#contacto" class="card-link">Solicitar →</a>
-</div>
+<!-- Reemplazar en todos los archivos -->
+<p>&copy; 2026 Mi Negocio. Todos los derechos reservados.</p>
+
+<!-- Por -->
+<p>&copy; 2026 Tu Nombre de Negocio. Todos los derechos reservados.</p>
 ```
 
-**Emojis útiles por tipo de negocio:**
-- Reparación: 🔧 ⚙️ 🛠️
-- Diseño: 🎨 ✏️ 📐
-- Construcción: 🏗️ 👷 🏠
-- Limpieza: 🧹 🧼 ✨
-- Peluquería: ✂️ 💇 💄
-- Restaurante: 🍽️ 🍕 👨‍🍳
-- Jardinería: 🌿 🌱 🪴
-- Informática: 💻 📱 ⌨️
+### 2️⃣ Cambiar Colores Principales
 
----
-
-### 3️⃣ CAMBIAR COLORES (en `style.css`)
-
-Abre `style.css` y busca la sección `<!-- VARIABLES GLOBALES - EDITAR COLORES -->`:
+Abre `style.css` y busca la sección `:root`:
 
 ```css
 :root {
     --color-primary: #2c3e50;      /* Color principal (header, etc) */
     --color-secondary: #3498db;    /* Color secundario (botones) */
     --color-accent: #e74c3c;       /* Color de acento (hover) */
-    --color-light: #ecf0f1;        /* Fondo claro */
+    --color-dark: #1a1a1a;         /* Fondo oscuro */
 }
 ```
 
-**Combinaciones de colores recomendadas:**
+**Combos de colores recomendados:**
 
-| Negocio | Primary | Secondary | Accent |
-|---------|---------|-----------|--------|
+| Estilo | Primary | Secondary | Accent |
+|--------|---------|-----------|--------|
 | Profesional | #2c3e50 | #3498db | #e74c3c |
 | Moderno | #1a1a1a | #00d4ff | #ff006e |
-| Clásico | #34495e | #16a085 | #f39c12 |
-| Cálido | #8b4513 | #d68910 | #e74c3c |
-| Fresco | #0984e3 | #00b894 | #fdcb6e |
-| Lujo | #2c3e50 | #c9aa61 | #e74c3c |
+| Verde | #27ae60 | #16a085 | #f39c12 |
+| Naranja | #8b4513 | #d68910 | #e74c3c |
+| Púrpura | #6c3483 | #8e44ad | #f39c12 |
 
----
+### 3️⃣ Editar Contenido de Inicio
 
-### 4️⃣ DATOS DE CONTACTO
-
-Busca la sección `<!-- SECCIÓN CONTACTO -->` y reemplaza:
+En `index.html`:
 
 ```html
-<strong>📍 Ubicación:</strong>
-<p>Calle Principal 123, Tu Ciudad</p>
+<!-- Título del hero -->
+<h1>Bienvenido a Mi Negocio</h1>
+<p>Servicios de calidad para tu comunidad local</p>
 
-<strong>📞 Teléfono:</strong>
-<p><a href="tel:+15559000000">+1 (555) 900-0000</a></p>
+<!-- Descripción "¿Quiénes Somos?" -->
+<h2>¿Quiénes Somos?</h2>
+<p>Texto aquí...</p>
 
-<strong>📧 Email:</strong>
-<p><a href="mailto:info@tunegoció.com">info@tunegoció.com</a></p>
-
-<strong>🕐 Horario:</strong>
-<p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábado: 10:00 AM - 2:00 PM</p>
+<!-- Estadísticas -->
+<div class="stat-number">1000+</div>
+<div class="stat-label">Clientes Satisfechos</div>
 ```
 
----
+### 4️⃣ Editar Servicios
 
-### 5️⃣ REDES SOCIALES
-
-Busca los links y reemplaza con tus URLs:
+En `index.html` y `servicios.html`:
 
 ```html
-<a href="https://facebook.com/tupagina" class="social-link">Facebook</a>
-<a href="https://instagram.com/tuperfil" class="social-link">Instagram</a>
-<a href="https://wa.me/15559000000" class="social-link">WhatsApp</a>
-```
-
----
-
-### 6️⃣ GALERÍA/PORTAFOLIO
-
-En la sección `<!-- SECCIÓN GALERÍA -->`, los gradientes son placeholders:
-
-```html
-<div class="galeria-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-```
-
-**Opción A: Usar una imagen real**
-```html
-<div class="galeria-image" style="background-image: url('ruta/a/tu/imagen.jpg'); background-size: cover;"></div>
-```
-
-**Opción B: Usar Free Stock Photos**
-- Pexels: pexels.com
-- Unsplash: unsplash.com
-- Pixabay: pixabay.com
-
----
-
-### 7️⃣ TESTIMONIOS
-
-En la sección `<!-- SECCIÓN TESTIMONIOS -->`:
-
-```html
-<div class="testimonial-card">
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p>"Tu testimonial aquí"</p>
-    <strong>- Nombre del Cliente</strong>
+<div class="servicio-card">
+    <div class="servicio-icon">🔧</div>  <!-- Cambia el emoji -->
+    <h3>Servicio 1</h3>                  <!-- Nombre del servicio -->
+    <p>Descripción breve...</p>           <!-- Descripción -->
+    <a href="servicios.html" class="card-link">Ver Detalle →</a>
 </div>
 ```
 
----
+**Emojis útiles:**
+- 🔧 ⚙️ 🛠️ (Reparación)
+- 🎨 ✏️ 📐 (Diseño)
+- 🏗️ 👷 🏠 (Construcción)
+- 🧹 🧼 ✨ (Limpieza)
+- ✂️ 💇 💄 (Peluquería)
+- 🍽️ 🍕 👨‍🍳 (Restaurante)
+- 🌿 🌱 🪴 (Jardinería)
+- 💻 📱 ⌨️ (Informática)
 
-## 🎨 COMBOS DE COLORES LISTOS
+### 5️⃣ Editar Información de Contacto
 
-### Opción 1: Profesional Azul
-```css
---color-primary: #2c3e50;
---color-secondary: #3498db;
---color-accent: #e74c3c;
+En `contacto.html`:
+
+```html
+<!-- Teléfono -->
+<p><a href="tel:+15559000000">+1 (555) 900-0000</a></p>
+
+<!-- Email -->
+<p><a href="mailto:info@minegoció.com">info@minegoció.com</a></p>
+
+<!-- Ubicación -->
+<p>Calle Principal 123<br>Tu Ciudad, Estado</p>
+
+<!-- Horario -->
+<p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM<br>
+   <strong>Sábado:</strong> 10:00 AM - 2:00 PM</p>
 ```
 
-### Opción 2: Moderno Oscuro
-```css
---color-primary: #1a1a1a;
---color-secondary: #00d4ff;
---color-accent: #ff006e;
+### 6️⃣ Editar Redes Sociales
+
+En todos los archivos, busca:
+
+```html
+<!-- Reemplazar URLs -->
+<a href="https://facebook.com/tupagina">👍 Facebook</a>
+<a href="https://instagram.com/tuperfil">📷 Instagram</a>
+<a href="https://wa.me/15559000000">💬 WhatsApp</a>
 ```
 
-### Opción 3: Verde Naturaleza
-```css
---color-primary: #27ae60;
---color-secondary: #16a085;
---color-accent: #f39c12;
+### 7️⃣ Agregar Imágenes
+
+En `galeria.html`, reemplaza los gradientes por imágenes:
+
+```html
+<!-- ANTES (Gradiente) -->
+<div class="galeria-image-large" 
+     style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+
+<!-- DESPUÉS (Imagen) -->
+<div class="galeria-image-large" 
+     style="background-image: url('ruta/a/tu/imagen.jpg'); background-size: cover;"></div>
 ```
 
-### Opción 4: Naranja Cálido
-```css
---color-primary: #8b4513;
---color-secondary: #d68910;
---color-accent: #e74c3c;
+**Free Stock Photos:**
+- Pexels.com
+- Unsplash.com
+- Pixabay.com
+
+### 8️⃣ Formulario Funcional
+
+El formulario ya tiene validación cliente. Para hacer que envíe correos, necesitas un backend (PHP, Node.js, etc.).
+
+Ejemplo simple con formspree.io (gratis):
+
+```javascript
+// En script.js, línea ~85, reemplaza esto:
+formularioContacto.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // ... validación ...
+    mostrarNotificacion('¡Mensaje enviado correctamente!', 'success');
+    formularioContacto.reset();
+});
+
+// Por esto:
+formularioContacto.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // ... validación ...
+    
+    // Enviar a formspree
+    fetch('https://formspree.io/f/tu-id', {
+        method: 'POST',
+        body: new FormData(formularioContacto),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (response.ok) {
+            mostrarNotificacion('¡Mensaje enviado!', 'success');
+            formularioContacto.reset();
+        }
+    })
+    .catch(() => mostrarNotificacion('Error al enviar', 'error'));
+});
 ```
 
----
+## 🎨 Cambiar Fuentes
 
-## ✨ FUNCIONALIDADES INCLUIDAS
+En `style.css`:
 
-✅ **Responsive**: Se adapta a móvil, tablet y desktop
-✅ **Menú Hamburguesa**: Automático en dispositivos pequeños
-✅ **Formulario Funcional**: Con validación de datos
-✅ **Animaciones Suaves**: Al hacer scroll
-✅ **Notificaciones**: Toast messages automáticas
-✅ **SEO Básico**: Meta tags listos
-✅ **Navegación Suave**: Scroll automático
-✅ **Totalmente Editable**: Comentarios claros en el código
-
----
-
-## 📝 PASOS PARA PUBLICAR
-
-1. **Edita tu contenido**: Cambia textos, colores, datos de contacto
-2. **Agrega tus imágenes**: En la galería
-3. **Sube a hosting**: 
-   - Alternativas gratis: Netlify, Vercel, GitHub Pages
-   - Alternativas pagadas: Hostinger, Namecheap, GoDaddy
-
-4. **Compra tu dominio**: Ej: tunegoció.com
-
----
-
-## 🎯 TIPOS DE NEGOCIOS IDEALES
-
-✅ Peluquería / Barbería
-✅ Dentista / Clínica
-✅ Abogado / Asesor
-✅ Plomero / Electricista
-✅ Diseñador Gráfico
-✅ Agencia de Marketing
-✅ Fotógrafo
-✅ Psicólogo / Psiquiatra
-✅ Veterinario
-✅ Academia / Tutor
-✅ Restaurante / Café
-✅ Tienda Online
-✅ Servicios Generales
-
----
-
-## 📞 SOPORTE RÁPIDO
-
-**¿Necesitas cambiar la fuente?**
-En `style.css` busca:
 ```css
---font-title: 'Georgia', 'Garamond', serif;
---font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+    --font-title: 'Georgia', 'Garamond', serif;    /* Títulos */
+    --font-body: 'Segoe UI', Tahoma, Geneva, sans-serif;  /* Cuerpo */
+}
 ```
 
-**¿Quieres más servicios?**
-Simplemente copia-pega un `<div class="servicio-card">` y cambia el contenido.
+**Fuentes Google recomendadas:**
 
-**¿Necesitas más secciones?**
-Contacta a un desarrollador para customización avanzada.
+Títulos: `Playfair Display`, `Montserrat`, `Raleway`
+Cuerpo: `Open Sans`, `Poppins`, `Roboto`
+
+## 📱 Responsive Design
+
+La plantilla se adapta automáticamente a:
+
+- **Desktop:** 1200px+
+- **Tablet:** 768px - 1199px
+- **Móvil:** 480px - 767px
+
+## 🚀 Cómo Publicar
+
+### Opción 1: Hosting Gratis
+- **Netlify.com** - Sube tus archivos y listo
+- **GitHub Pages** - Si usas GitHub
+- **Vercel.com** - Super fácil para principiantes
+
+### Opción 2: Hosting Pagado
+- **Hostinger.com** - Económico y bueno
+- **Namecheap.com** - Dominio + hosting
+- **GoDaddy.com** - Popular pero caro
+
+### Pasos para publicar en Netlify:
+1. Crea una carpeta con todos los archivos
+2. Ve a Netlify.com
+3. Arrastra la carpeta al area de "Drop"
+4. ¡Listo! Tu web está en línea
+
+## 🔍 SEO Básico
+
+Para mejorar visibilidad en Google, edita los títulos de cada página:
+
+```html
+<title>Mi Negocio - Servicios Profesionales en Tu Ciudad</title>
+```
+
+Agrega palabras clave relevantes.
+
+## 📋 Checklist Antes de Publicar
+
+- [ ] Cambiar nombre del negocio en todos los archivos
+- [ ] Editar colores en style.css
+- [ ] Actualizar teléfono y email
+- [ ] Cambiar dirección y horario
+- [ ] Agregar descripción en "Sobre Nosotros"
+- [ ] Editar servicios
+- [ ] Agregar testimonios reales
+- [ ] Agregar imágenes de proyectos
+- [ ] Probar en móvil
+- [ ] Probar todos los enlaces
+- [ ] Probar formulario
+
+## 🆘 Solución de Problemas
+
+**El menú no funciona en móvil:**
+- Asegúrate de que `script.js` está incluido en el HTML
+
+**Los estilos no se ven:**
+- Verifica que `style.css` está en la misma carpeta
+- Recarga la página (Ctrl+Shift+R en Chrome)
+
+**El formulario no envía:**
+- El formulario actual solo muestra notificación
+- Configura Formspree.io para recibir correos
+
+**Las imágenes no se ven:**
+- Usa rutas relativas: `./imagenes/foto.jpg`
+- Asegúrate de que la carpeta de imágenes existe
+
+## 💡 Tips Profesionales
+
+1. **Usa de 2-3 colores máximo** - No saturar la vista
+2. **Emojis con moderación** - Máximo 1 por sección
+3. **Texto conciso** - Los clientes leen rápido
+4. **Teléfono prominente** - Es la forma #1 de contacto local
+5. **Testimonios genuinos** - Aumentan confianza
+6. **Fotos de calidad** - Vale la pena invertir
+7. **Actualiza regularmente** - Mantén la web fresca
+
+## 📚 Recursos Útiles
+
+- **Colores:** Coolors.co
+- **Fuentes:** Google Fonts
+- **Iconos:** Emojipedia.org
+- **Imágenes:** Pexels.com, Unsplash.com
+- **Inspiración:** Dribbble.com, Behance.net
+
+## 📞 Soporte
+
+Esta es una plantilla de código abierto. Para problemas:
+
+1. Verifica que todos los archivos están en la misma carpeta
+2. Recarga la página completa (Ctrl+Shift+R)
+3. Abre la consola (F12) para ver errores
 
 ---
 
-## ⚡ TIPS PROFESIONALES
+**¡Tu web está lista para vender! 🎉**
 
-1. **Usa de 2-3 colores máximo** para no saturar
-2. **Emojis cautela**: Máximo 1 por sección
-3. **Texto conciso**: Los clientes locales leen rápido
-4. **Teléfono prominente**: Es la forma #1 de contacto local
-5. **Testimonios genuinos**: Aumentan confianza
-6. **Fotos de calidad**: Vale la pena invertir
+Edita con confianza, customiza los colores, y comienza a captar clientes locales.
 
 ---
 
-## 📱 RESPONSIVE BREAKPOINTS
+**Créditos:** Plantilla profesional diseñada para pequeños negocios y emprendedores.
 
-- **Desktop**: 1200px+
-- **Tablet**: 768px - 1199px
-- **Móvil**: 480px - 767px
-
----
-
-**¡Tu web está lista! 🚀**
-
-Edita con confianza, no hay limites. ¡A vender!
+Última actualización: 2026

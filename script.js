@@ -1,175 +1,220 @@
-// ===== MENÚ HAMBURGUESA =====
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    }
+// ============ MENÚ HAMBURGUESA ============
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-    // Cerrar menú al hacer click en un enlace
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
-            if (navMenu) navMenu.classList.remove('active');
-            if (hamburger) hamburger.classList.remove('active');
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         });
     });
 
-    // Inicializar funcionalidades
-    initFormulario();
-    initAnimaciones();
-});
-
-// ===== FORMULARIO DE CONTACTO =====
-function initFormulario() {
-    const contactoForm = document.querySelector('.contacto-form');
-    if (!contactoForm) return;
-
-    contactoForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const nombre = contactoForm.querySelector('input[placeholder="Tu Nombre"]').value.trim();
-        const email = contactoForm.querySelector('input[placeholder="Tu Email"]').value.trim();
-        const telefono = contactoForm.querySelector('input[placeholder="Tu Teléfono"]').value.trim();
-        const mensaje = contactoForm.querySelector('textarea[placeholder="Tu Mensaje"]').value.trim();
-
-        // Validaciones
-        if (!nombre || !email || !telefono || !mensaje) {
-            mostrarNotificacion('Por favor completa todos los campos', 'error');
-            return;
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar-container')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         }
-
-        if (!validarEmail(email)) {
-            mostrarNotificacion('Por favor ingresa un correo válido', 'error');
-            return;
-        }
-
-        if (!validarTelefono(telefono)) {
-            mostrarNotificacion('Por favor ingresa un teléfono válido', 'error');
-            return;
-        }
-
-        if (mensaje.length < 10) {
-            mostrarNotificacion('El mensaje debe tener al menos 10 caracteres', 'error');
-            return;
-        }
-
-        // Si todo es válido
-        mostrarNotificacion('¡Mensaje enviado! Te contactaremos pronto.', 'success');
-        contactoForm.reset();
-        
-        // NOTA: Aquí iría el envío a un servidor
-        // En la práctica, necesitarías un backend para procesar esto
-        console.log({
-            nombre,
-            email,
-            telefono,
-            mensaje
-        });
     });
 }
 
-// ===== VALIDACIÓN EMAIL =====
+// ============ SISTEMA DE NOTIFICACIONES ============
+function mostrarNotificacion(mensaje, tipo = 'success') {
+    const notification = document.createElement('div');
+    notification.className = `notification ${tipo}`;
+    notification.textContent = mensaje;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// ============ VALIDACIÓN DE FORMULARIOS ============
 function validarEmail(email) {
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regexEmail.test(email);
 }
 
-// ===== VALIDACIÓN TELÉFONO =====
 function validarTelefono(telefono) {
     const regexTelefono = /^[\d\s\-\+\(\)]{7,}$/;
     return regexTelefono.test(telefono);
 }
 
-// ===== NOTIFICACIONES =====
-function mostrarNotificacion(mensaje, tipo) {
-    const notificacion = document.createElement('div');
-    notificacion.className = `notificacion notificacion-${tipo}`;
-    notificacion.textContent = mensaje;
-    
-    notificacion.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        padding: 15px 25px;
-        border-radius: 6px;
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-        font-weight: 600;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    `;
+// ============ FORMULARIO DE CONTACTO ============
+const formularioContacto = document.getElementById('formularioContacto');
 
-    if (tipo === 'success') {
-        notificacion.style.backgroundColor = '#27ae60';
-        notificacion.style.color = 'white';
-        notificacion.style.borderLeft = '4px solid #229954';
-    } else if (tipo === 'error') {
-        notificacion.style.backgroundColor = '#e74c3c';
-        notificacion.style.color = 'white';
-        notificacion.style.borderLeft = '4px solid #c0392b';
-    }
+if (formularioContacto) {
+    formularioContacto.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-    document.body.appendChild(notificacion);
+        // Obtener valores
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const asunto = document.getElementById('asunto').value;
+        const mensaje = document.getElementById('mensaje').value.trim();
 
-    // Animar entrada
-    setTimeout(() => {
-        notificacion.style.animation = 'slideIn 0.3s ease';
-    }, 0);
+        // Validar campos
+        if (!nombre) {
+            mostrarNotificacion('Por favor, ingresa tu nombre', 'error');
+            return;
+        }
 
-    // Eliminar notificación después de 4 segundos
-    setTimeout(() => {
-        notificacion.style.opacity = '0';
-        notificacion.style.transition = 'opacity 0.3s ease';
-        setTimeout(() => {
-            notificacion.remove();
-        }, 300);
-    }, 4000);
+        if (!validarEmail(email)) {
+            mostrarNotificacion('Por favor, ingresa un email válido', 'error');
+            return;
+        }
+
+        if (!validarTelefono(telefono)) {
+            mostrarNotificacion('Por favor, ingresa un teléfono válido', 'error');
+            return;
+        }
+
+        if (!asunto) {
+            mostrarNotificacion('Por favor, selecciona un asunto', 'error');
+            return;
+        }
+
+        if (!mensaje || mensaje.length < 10) {
+            mostrarNotificacion('El mensaje debe tener al menos 10 caracteres', 'error');
+            return;
+        }
+
+        // Si todo es válido, mostrar éxito
+        mostrarNotificacion('¡Mensaje enviado correctamente! Te contactaremos pronto.', 'success');
+
+        // Limpiar formulario
+        formularioContacto.reset();
+
+        // Aquí puedes agregar código para enviar el formulario a un servidor
+        // Ejemplo con fetch:
+        /*
+        fetch('tu-endpoint.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                nombre: nombre,
+                email: email,
+                telefono: telefono,
+                asunto: asunto,
+                mensaje: mensaje
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            mostrarNotificacion('¡Mensaje enviado correctamente!', 'success');
+            formularioContacto.reset();
+        })
+        .catch(error => {
+            mostrarNotificacion('Error al enviar el mensaje', 'error');
+            console.error('Error:', error);
+        });
+        */
+    });
 }
 
-// ===== ANIMACIONES AL SCROLL =====
-function initAnimaciones() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
+// ============ ANIMACIONES AL SCROLL ============
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
 
-    // Animar elementos
-    document.querySelectorAll('.servicio-card, .galeria-item, .ventaja-item, .stat-card, .testimonial-card').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'all 0.6s ease';
-        observer.observe(element);
+// Aplicar animación a elementos
+document.querySelectorAll('.servicio-card, .stat-card, .team-member, .faq-item, .galeria-item-completa').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(element);
+});
+
+// ============ SMOOTH SCROLL LINKS ============
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// ============ ANIMACIÓN DE CARGA DE PÁGINA ============
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+// ============ EFECTOS DE HOVER EN BOTONES ============
+document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
+    button.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-2px)';
     });
 
-    // Aplicar animación cuando es visible
-    const style = document.createElement('style');
-    style.innerHTML = `
-        .servicio-card.visible,
-        .galeria-item.visible,
-        .ventaja-item.visible,
-        .stat-card.visible,
-        .testimonial-card.visible {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-    `;
-    document.head.appendChild(style);
+    button.addEventListener('mouseleave', function () {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// ============ CONTADOR DE CARRERA PARA ESTADÍSTICAS ============
+let hasAnimated = false;
+
+window.addEventListener('scroll', () => {
+    if (!hasAnimated) {
+        const stats = document.querySelectorAll('.stat-card');
+        stats.forEach(stat => {
+            const rect = stat.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                animateNumbers();
+                hasAnimated = true;
+            }
+        });
+    }
+});
+
+function animateNumbers() {
+    const elements = document.querySelectorAll('.stat-number');
+    
+    elements.forEach(element => {
+        const finalValue = element.textContent;
+        const numericValue = parseInt(finalValue);
+        
+        if (isNaN(numericValue)) return;
+        
+        let currentValue = 0;
+        const increment = Math.ceil(numericValue / 50);
+        
+        const counter = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= numericValue) {
+                element.textContent = finalValue;
+                clearInterval(counter);
+            } else {
+                element.textContent = currentValue + '+';
+            }
+        }, 30);
+    });
 }
 
-// ===== LOG DE INICIALIZACIÓN =====
-console.log('✅ Web Plantilla Cargada Correctamente');
-console.log('👉 Edita los estilos en style.css y contenido en index.html para personalizarla');
+// ============ INICIALIZACIÓN ============
+console.log('✅ Plantilla web cargada correctamente');

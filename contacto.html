@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Mi Negocio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER/NAVEGACIÓN -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">
+                    <h1><a href="index.html">Mi Negocio</a></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-secondary">
+        <div class="hero-content">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte</p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="contacto-section">
+        <div class="container">
+            <div class="contacto-grid">
+                <!-- FORMULARIO -->
+                <div class="contacto-form-wrapper">
+                    <h2>Envíanos un Mensaje</h2>
+                    <form class="contacto-form" id="formularioContacto">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+1 (555) 000-0000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="consulta">Consulta General</option>
+                                <option value="presupuesto">Solicitar Presupuesto</option>
+                                <option value="servicio1">Servicio 1</option>
+                                <option value="servicio2">Servicio 2</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-block">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                <!-- INFORMACIÓN DE CONTACTO -->
+                <div class="contacto-info-wrapper">
+                    <h2>Información de Contacto</h2>
+                    
+                    <div class="info-box">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Ubicación</h3>
+                            <p>Calle Principal 123<br>Tu Ciudad, Estado</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:+15559000000">+1 (555) 900-0000</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@minegoció.com">info@minegoció.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">🕐</div>
+                        <div class="info-content">
+                            <h3>Horario de Atención</h3>
+                            <p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM<br>
+                               <strong>Sábado:</strong> 10:00 AM - 2:00 PM<br>
+                               <strong>Domingo:</strong> Cerrado</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-icon">💬</div>
+                        <div class="info-content">
+                            <h3>Síguenos en Redes</h3>
+                            <div class="social-buttons">
+                                <a href="https://facebook.com" class="social-btn facebook">👍 Facebook</a>
+                                <a href="https://instagram.com" class="social-btn instagram">📷 Instagram</a>
+                                <a href="https://wa.me/15559000000" class="social-btn whatsapp">💬 WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREGUNTAS FRECUENTES -->
+            <section class="faq-section">
+                <h2>Preguntas Frecuentes</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>¿Cuál es tu horario de atención?</h3>
+                        <p>Estamos disponibles de lunes a viernes de 9:00 AM a 6:00 PM, y sábados de 10:00 AM a 2:00 PM.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Ofrecen consulta gratuita?</h3>
+                        <p>Sí, ofrecemos una consulta inicial sin compromiso de 30 minutos.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Cuál es el tiempo de respuesta?</h3>
+                        <p>Nos esforzamos por responder dentro de 24 horas durante días hábiles.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>¿Puedo pagar en línea?</h3>
+                        <p>Sí, aceptamos varias formas de pago. Contáctanos para más detalles.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Mi Negocio</h3>
+                    <p>Servicios de calidad para tu comunidad.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Síguenos</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com" class="social-link">👍 Facebook</a>
+                        <a href="https://instagram.com" class="social-link">📷 Instagram</a>
+                        <a href="https://wa.me/" class="social-link">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mi Negocio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
