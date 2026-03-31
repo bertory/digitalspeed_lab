@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Mi Negocio</title>
-    <link rel="icon" type="image/png" href="659921138_2255509501522872_7363854075082724491_n.png">
+    <title>Reservas y Contacto - Nuestro Restaurante</title>
+    <link rel="icon" type="image/png" href="title.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,14 +13,17 @@
         <nav class="navbar">
             <div class="navbar-container">
                 <div class="logo">
-                    <h1><a href="index.html">Mi Negocio</a></h1>
+                    <a href="index.html">
+                        <img src="hipervinculo.png" alt="Logo del restaurante" class="logo-img">
+                    </a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Carta</a></li>
                     <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="contacto.html">Reservas</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -34,8 +37,8 @@
     <!-- HERO SECTION -->
     <section class="hero-secondary">
         <div class="hero-content">
-            <h1>Contacto</h1>
-            <p>Estamos aquí para ayudarte</p>
+            <h1>Reservas y Contacto</h1>
+            <p>Estamos listos para recibirte y ayudarte con cualquier consulta</p>
         </div>
     </section>
 
@@ -45,40 +48,40 @@
             <div class="contacto-grid">
                 <!-- FORMULARIO -->
                 <div class="contacto-form-wrapper">
-                    <h2>Envíanos un Mensaje</h2>
+                    <h2>Reserva tu mesa o escríbenos</h2>
                     <form class="contacto-form" id="formularioContacto" action="https://formspree.io/f/mykbeaza" method="POST">
     <div class="form-group">
         <label for="nombre">Nombre Completo *</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
     </div>
 
     <div class="form-group">
-        <label for="email">Email *</label>
+        <label for="email">Correo Electrónico *</label>
         <input type="email" id="email" name="email" placeholder="tu@email.com" required>
     </div>
 
     <div class="form-group">
         <label for="telefono">Teléfono *</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="+1 (555) 000-0000" required>
+        <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" required>
     </div>
 
     <div class="form-group">
-        <label for="asunto">Asunto *</label>
-        <input type="text" id="asunto" name="asunto" placeholder="Escribe el asunto de tu mensaje" required>
+        <label for="asunto">Asunto o fecha de reserva *</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Ej. Reserva para el sábado a las 21:00" required>
     </div>
 
     <div class="form-group">
         <label for="mensaje">Mensaje *</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..." rows="6" required></textarea>
+        <textarea id="mensaje" name="mensaje" placeholder="Indícanos cuántas personas sois o cualquier detalle importante..." rows="6" required></textarea>
     </div>
 
-    <button type="submit" class="btn-primary btn-block">Enviar Mensaje</button>
+    <button type="submit" class="btn-primary btn-block">Enviar solicitud</button>
 </form>
                 </div>
 
                 <!-- INFORMACIÓN DE CONTACTO -->
                 <div class="contacto-info-wrapper">
-                    <h2>Información de Contacto</h2>
+                    <h2>Visítanos</h2>
                     
                     <div class="info-box">
                         <div class="info-icon">📍</div>
@@ -91,7 +94,7 @@
                     <div class="info-box">
                         <div class="info-icon">📞</div>
                         <div class="info-content">
-                            <h3>Teléfono</h3>
+                            <h3>Reservas</h3>
                             <p><a href="tel:+15559000000">+1 (555) 900-0000</a></p>
                         </div>
                     </div>
@@ -100,17 +103,17 @@
                         <div class="info-icon">📧</div>
                         <div class="info-content">
                             <h3>Email</h3>
-                            <p><a href="mailto:info@minegoció.com">info@minegoció.com</a></p>
+                            <p><a href="mailto:reservas@restaurante.com">reservas@restaurante.com</a></p>
                         </div>
                     </div>
 
                     <div class="info-box">
                         <div class="info-icon">🕐</div>
                         <div class="info-content">
-                            <h3>Horario de Atención</h3>
-                            <p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM<br>
-                               <strong>Sábado:</strong> 10:00 AM - 2:00 PM<br>
-                               <strong>Domingo:</strong> Cerrado</p>
+                            <h3>Horario</h3>
+                            <p><strong>Lunes a Jueves:</strong> 13:00 - 23:00<br>
+                               <strong>Viernes y Sábado:</strong> 13:00 - 00:00<br>
+                               <strong>Domingo:</strong> 13:00 - 17:00</p>
                         </div>
                     </div>
 
@@ -133,20 +136,20 @@
                 <h2>Preguntas Frecuentes</h2>
                 <div class="faq-grid">
                     <div class="faq-item">
-                        <h3>¿Cuál es tu horario de atención?</h3>
-                        <p>Estamos disponibles de lunes a viernes de 9:00 AM a 6:00 PM, y sábados de 10:00 AM a 2:00 PM.</p>
+                        <h3>¿Es recomendable reservar?</h3>
+                        <p>Sí, especialmente los fines de semana y en horario de cena, para asegurar tu mesa.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>¿Ofrecen consulta gratuita?</h3>
-                        <p>Sí, ofrecemos una consulta inicial sin compromiso de 30 minutos.</p>
+                        <h3>¿Tenéis opciones vegetarianas?</h3>
+                        <p>Sí, contamos con varias opciones vegetarianas y nos adaptamos si nos avisas con antelación.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>¿Cuál es el tiempo de respuesta?</h3>
-                        <p>Nos esforzamos por responder dentro de 24 horas durante días hábiles.</p>
+                        <h3>¿Se pueden celebrar eventos?</h3>
+                        <p>Sí, organizamos comidas familiares, cenas especiales y pequeños eventos.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>¿Puedo pagar en línea?</h3>
-                        <p>Sí, aceptamos varias formas de pago. Contáctanos para más detalles.</p>
+                        <h3>¿Aceptáis pago con tarjeta?</h3>
+                        <p>Sí, aceptamos tarjeta y otros métodos de pago habituales.</p>
                     </div>
                 </div>
             </section>
@@ -158,30 +161,30 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Mi Negocio</h3>
-                    <p>Servicios de calidad para tu comunidad.</p>
+                    <h3>Nuestro Restaurante</h3>
+                    <p>Cocina con sabor, cercanía y buenos momentos para compartir.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Enlaces Rápidos</h3>
                     <ul>
                         <li><a href="index.html">Inicio</a></li>
-                        <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="sobre-nosotros.html">Nosotros</a></li>
+                        <li><a href="servicios.html">Carta</a></li>
                         <li><a href="galeria.html">Galería</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Reservas</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Síguenos</h3>
                     <div class="social-links">
-                        <a href="https://facebook.com" class="social-link">👍 Facebook</a>
-                        <a href="https://instagram.com" class="social-link">📷 Instagram</a>
-                        <a href="https://wa.me/" class="social-link">💬 WhatsApp</a>
+                        <a href="https://facebook.com" class="social-link">Facebook</a>
+                        <a href="https://instagram.com" class="social-link">Instagram</a>
+                        <a href="https://wa.me/" class="social-link">WhatsApp</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Mi Negocio. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Nuestro Restaurante. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

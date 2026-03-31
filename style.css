@@ -64,18 +64,19 @@ a {
     align-items: center;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
-    font-weight: bold;
+.logo a {
+    display: inline-block;
 }
 
-.logo h1 a {
-    color: white;
-    transition: color 0.3s;
+.logo-img {
+    height: 56px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
-.logo h1 a:hover {
-    color: var(--color-secondary);
+.logo a:hover .logo-img {
+    opacity: 0.9;
 }
 
 .nav-menu {
@@ -139,10 +140,16 @@ a {
 
 /* ============ HERO SECTION ============ */
 .hero {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 55%, var(--color-soft) 130%);
+    background:
+        linear-gradient(rgba(3, 58, 92, 0.55), rgba(5, 125, 205, 0.55)),
+        url("foto web.jpg") center center / cover no-repeat;
     color: white;
     padding: 8rem 20px;
     text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-secondary {
